@@ -1,5 +1,4 @@
 defmodule Borrower do
-
   defstruct [:name, :max_books]
 
   def make_borrower(n, mb), do: %Borrower{name: n, max_books: mb}
@@ -18,5 +17,4 @@ defmodule Borrower do
       to_string(get_max_books(br)) <>
       " books)"
   end
-
 end

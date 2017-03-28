@@ -1,5 +1,4 @@
 defmodule Book do
-
   defstruct [:title, :author, :borrower]
 
   def make_book(t, a), do: %Book{title: t, author: a, borrower: nil}
@@ -26,5 +25,4 @@ defmodule Book do
       " by " <> get_author(bk) <>
       "; " <> available_string(bk)
   end
-
 end
