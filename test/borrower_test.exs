@@ -5,5 +5,6 @@ defmodule BorrowerTest do
 
   test "properly creates itself" do
     assert Borrower.get_name(@br) == "Borrower1"
+    assert Borrower.get_max_books(@br) == 1
   end
 end
