@@ -8,5 +8,7 @@ defmodule BookTest do
   test "create itself properly" do
     assert Book.get_title(@bk1) == "Title1"
     assert Book.get_author(@bk1) == "Author1"
+    assert Book.get_borrower(@bk1) == nil
+    assert Book.get_borrower(@bk2) == @br
   end
 end
