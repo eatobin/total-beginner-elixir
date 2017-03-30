@@ -1,7 +1,7 @@
 defmodule BookTest do
   use ExUnit.Case
 
-  @br2 Borrower.make_borrower("Borrower1", 1)
+  @br2 Borrower.make_borrower("Borrower2", 2)
   @bk1 Book.make_book("Title1", "Author1")
   @bk2 Book.set_borrower(@br2, @bk1)
 
@@ -16,7 +16,7 @@ defmodule BookTest do
     assert Book.book_to_string(@bk1) == "Title1 by Author1; Available"
   end
 
-  test "return a string \"Title1 by Author1; Checked out to Borrower1\"" do
-    assert Book.book_to_string(@bk2) == "Title1 by Author1; Checked out to Borrower1"
+  test "return a string \"Title1 by Author1; Checked out to Borrower2\"" do
+    assert Book.book_to_string(@bk2) == "Title1 by Author1; Checked out to Borrower2"
   end
 end
