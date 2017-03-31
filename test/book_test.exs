@@ -1,5 +1,7 @@
+ExUnit.start
+
 defmodule BookTest do
-  use ExUnit.Case
+  use ExUnit.Case, async: true
 
   @br2 Borrower.make_borrower("Borrower2", 2)
   @bk1 Book.make_book("Title1", "Author1")

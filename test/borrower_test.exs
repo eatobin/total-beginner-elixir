@@ -1,5 +1,7 @@
+ExUnit.start
+
 defmodule BorrowerTest do
-  use ExUnit.Case
+  use ExUnit.Case, async: true
 
   @br1 Borrower.make_borrower("Borrower1", 1)
 
