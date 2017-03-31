@@ -14,9 +14,9 @@ defmodule Library do
       bks
     end
   end
-end
-#  def find_item(tgt, coll, f) do
-#    result = Enum.filter(coll, f.(x) == tgt)
-#    List.first(result)
-#  end
 
+  def find_item(tgt, coll, f) do
+    result = Enum.filter(coll, &(f.(&1) == tgt))
+    List.first(result)
+  end
+end
