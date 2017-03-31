@@ -14,19 +14,9 @@ defmodule Library do
       bks
     end
   end
-
+end
 #  def find_item(tgt, coll, f) do
 #    result = Enum.filter(coll, f.(x) == tgt)
 #    List.first(result)
 #  end
 
-  def tester(tuple, f, tgt) do
-    f.(tuple,0) == tgt
-  end
-
-  def dbl(n), do: n * 2
-end
-
-
-dbl = fn(n) -> n * 2 end
-Enum.filter([1,2,3], (dbl > 2))
