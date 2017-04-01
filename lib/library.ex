@@ -1,4 +1,5 @@
 defmodule Library do
+  def hi(), do: "Hello" end
   def add_item(x, xs) do
     if Enum.member?(xs,x) do
       xs
