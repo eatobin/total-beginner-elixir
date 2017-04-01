@@ -1,15 +1,15 @@
 defmodule Book do
   defstruct [:title, :author, :borrower]
 
-  def make_book(t, a), do: %Book{title: t, author: a, borrower: nil}
+  def make_book(t, a), do: %Book{title: t, author: a, borrower: nil} end
 
-  def get_title(bk), do: bk.title
+  def get_title(bk), do: bk.title end
 
-  def get_author(bk), do: bk.author
+  def get_author(bk), do: bk.author end
 
-  def get_borrower(bk), do: bk.borrower
+  def get_borrower(bk), do: bk.borrower end
 
-  def set_borrower(br, bk), do: %{bk | borrower: br}
+  def set_borrower(br, bk), do: %{bk | borrower: br} end
 
   def available_string(bk) do
     br = get_borrower(bk)
