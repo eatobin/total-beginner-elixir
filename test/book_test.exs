@@ -5,7 +5,7 @@ defmodule BookTest do
   use ExUnit.Case, async: true
 
   @br2 Borrower.make_borrower("Borrower2", 2)
-  @bk1 Book.make_book("Title1", "Author1")
+  @bk1 Book.make_book("Title1", "Author1", nil)
   @bk2 Book.set_borrower(@br2, @bk1)
 
   test "create itself properly" do

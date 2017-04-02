@@ -4,8 +4,14 @@ defmodule LibraryTest do
 
   use ExUnit.Case, async: true
 
+  @br1 Borrower.make_borrower("Borrower1", 1)
   @br2 Borrower.make_borrower("Borrower2", 2)
-  @bk1 Book.make_book("Title1", "Author1")
+  @br3 Borrower.make_borrower("Borrower3", 3)
+
+  @brs1 [@br1, @br2]
+  @brs2 [@br3, @br1, @br2]
+
+  @bk1 Book.make_book("Title1", "Author1", nil)
   @bk2 Book.set_borrower(@br2, @bk1)
 
   test "create itself properly" do
