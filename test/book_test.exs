@@ -1,6 +1,7 @@
 ExUnit.start
 
 defmodule BookTest do
+
   use ExUnit.Case, async: true
 
   @br2 Borrower.make_borrower("Borrower2", 2)
@@ -21,4 +22,5 @@ defmodule BookTest do
   test "return a string \"Title1 by Author1; Checked out to Borrower2\"" do
     assert Book.book_to_string(@bk2) == "Title1 by Author1; Checked out to Borrower2"
   end
+
 end
