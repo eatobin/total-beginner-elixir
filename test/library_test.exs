@@ -30,6 +30,12 @@ defmodule LibraryTest do
     assert Library.add_item(@bk2, @bks1) == @bks1
   end
 
+it should "remove a Book correctly" in {
+    Library.removeBook(bk3, bks2) should be(bks1)
+    Library.removeBook(bk3, bks1) should be(bks1)
+  }
+
+
   #test "return a string \"Title1 by Author1; Available\"" do
   #  assert Book.book_to_string(@bk1) == "Title1 by Author1; Available"
   #end
