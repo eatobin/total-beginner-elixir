@@ -35,12 +35,12 @@ defmodule LibraryTest do
     assert Library.remove_book(@bk3, @bks1) == @bks1
   end
 
-  #test "return a string \"Title1 by Author1; Available\"" do
-  #  assert Book.book_to_string(@bk1) == "Title1 by Author1; Available"
-  #end
+  test "find a Book or Borrower correctly" do
+    assert Library.find_item("Title1", @bks2, &Book.get_title/1) == @bk1
+    assert Library.find_item("Title11", @bks2, &Book.get_title/1) == nil
 
-  #test "return a string \"Title1 by Author1; Checked out to Borrower2\"" do
-  #  assert Book.book_to_string(@bk2) == "Title1 by Author1; Checked out to Borrower2"
-  #end
+    assert Library.find_item("Borrower1", @brs2, &Borrower.get_name/1) == @br1
+    assert Library.find_item("Borrower11", @brs2, &Borrower.get_name/1) == nil
+  end
 
 end
