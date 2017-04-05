@@ -1,5 +1,9 @@
 defmodule Borrower do
 
+  @moduledoc """
+  This is the Borrower module.
+  """
+
   defstruct [:name, :max_books]
 
   def make_borrower(n, mb) do

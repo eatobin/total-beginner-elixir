@@ -1,7 +1,11 @@
 defmodule Library do
 
+  @moduledoc """
+  This is the Library module.
+  """
+
   def add_item(x, xs) do
-    if Enum.member?(xs,x) do
+    if Enum.member?(xs, x) do
       xs
     else
       [x | xs]

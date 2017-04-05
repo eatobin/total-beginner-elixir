@@ -1,5 +1,9 @@
 defmodule Book do
 
+  @moduledoc """
+  This is the Book module.
+  """
+
   defstruct [:title, :author, :borrower]
 
   def make_book(t, a, br) do
