@@ -15,12 +15,13 @@ defmodule BookTest do
     assert Book.get_borrower(@bk2) == @br2
   end
 
-  test "return a string \"Title1 by Author1; Available\"" do
+  test ~s/return a string \"Title1 by Author1; Available\"/ do
     assert Book.book_to_string(@bk1) == "Title1 by Author1; Available"
   end
 
-  test "return a string \"Title1 by Author1; Checked out to Borrower2\"" do
-    assert Book.book_to_string(@bk2) == "Title1 by Author1; Checked out to Borrower2"
+  test ~s/return a string \"Title1 by Author1; Checked out to Borrower2\"/ do
+    assert Book.book_to_string(@bk2) ==
+     "Title1 by Author1; Checked out to Borrower2"
   end
 
 end
