@@ -32,4 +32,32 @@ defmodule Library do
     for x <- bks, Book.get_borrower(x) == br, do: x
   end
 
+  def num_books_out(br, bks) do
+    length(get_books_for_borrower(br, bks))
+  end
+
+  def not_maxed_out(br, bks) do
+    num_books_out(br, bks) < Borrower.get_max_books(br)
+  end
+
+  def book_not_out(bk) do
+    Book.get_borrower(bk) == nil
+  end
+
+  def book_out(bk) do
+    Book.get_borrower(bk) != nil
+  end
+
+  def check_out(n, t, brs, bks) do
+    mbk = find_item(t, bks, &Book.get_title/1)
+    mbr = find_item(n, brs, &Borrower.get_name/1)
+    if (mbk != nil and mbr != nil and not_maxed_out(mbr, bks) and book_not_out(mbk)) do
+      new_book = Book.set_borrower(mbr, mbk)
+      fewer_books = remove_book(mbk, bks)
+      add_item(new_book, fewer_books)
+    else
+      bks
+    end
+  end
+
 end
