@@ -58,4 +58,8 @@ defmodule LibraryTest do
     assert Library.get_books_for_borrower(@br3, @bks3) == [@bk3, @bk4]
   end
 
+  # test "check out a Book correctly" do
+  #   assert Library.check_out("Borrower2", "Title1", @brs1, @bks1) == @bks2
+  # end
+
 end
