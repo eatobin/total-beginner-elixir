@@ -52,4 +52,10 @@ defmodule LibraryTest do
     assert Library.find_item("Borrower11", @brs2, &Borrower.get_name/1) == nil
   end
 
+  test "find Books for a Borrower" do
+    assert Library.get_books_for_borrower(@br2, @bks1) == []
+    assert Library.get_books_for_borrower(@br1, @bks1) == [@bk1]
+    assert Library.get_books_for_borrower(@br3, @bks3) == [@bk3, @bk4]
+  end
+
 end

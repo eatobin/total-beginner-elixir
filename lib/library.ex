@@ -28,7 +28,8 @@ defmodule Library do
   end
 
   def get_books_for_borrower(br, bks) do
-    Enum.filter(bks, fn x -> Book.get_borrower(x) == br end)
+    # Enum.filter(bks, fn x -> Book.get_borrower(x) == br end)
+    for x <- bks, Book.get_borrower(x) == br, do: x
   end
 
 end
