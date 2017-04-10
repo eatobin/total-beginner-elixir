@@ -51,7 +51,8 @@ defmodule Library do
   def check_out(n, t, brs, bks) do
     mbk = find_item(t, bks, &Book.get_title/1)
     mbr = find_item(n, brs, &Borrower.get_name/1)
-    if (mbk != nil and mbr != nil and not_maxed_out(mbr, bks) and book_not_out(mbk)) do
+    if (mbk != nil and mbr != nil
+          and not_maxed_out(mbr, bks) and book_not_out(mbk)) do
       new_book = Book.set_borrower(mbr, mbk)
       fewer_books = remove_book(mbk, bks)
       add_item(new_book, fewer_books)
