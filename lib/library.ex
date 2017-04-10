@@ -21,8 +21,9 @@ defmodule Library do
   end
 
   def find_item(tgt, coll, f) do
-    result = Enum.filter(coll, fn x -> f.(x) == tgt end)
+    # result = Enum.filter(coll, fn x -> f.(x) == tgt end)
     # result = Enum.filter(coll, &(f.(&1) == tgt))
+    result = for x <- coll, f.(x) == tgt, do: x
     List.first(result)
   end
 
