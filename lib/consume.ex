@@ -25,3 +25,5 @@ end
 # Question.consumer([1, 2, 3], trp)   # => [2, 3]
 
 # $ iex -S mix
+
+# test
