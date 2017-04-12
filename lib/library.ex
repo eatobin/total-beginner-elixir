@@ -61,4 +61,7 @@ defmodule Library do
     end
   end
 
+  def my_test() do
+    lengthx([3])
+  end
 end
