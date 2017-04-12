@@ -1,5 +1,4 @@
 defmodule Borrower do
-  # This is a comment!
 
   @moduledoc """
   This is the Borrower module.
