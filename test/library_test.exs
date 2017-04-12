@@ -21,15 +21,15 @@ defmodule LibraryTest do
   @bks2 [@bk3, @bk1, @bk2]
   @bks3 [@bk1, @bk2, @bk3, @bk4]
 
-  @ss "\n--- Status Report of Test Library ---\n\n
-    Test Library: 3 books; 3 borrowers.\n\n
-    Title3 by Author3; Checked out to Borrower3\n
-    Title1 by Author1; Checked out to Borrower1\n
-    Title2 by Author2; Available\n\n
-    Borrower3 (3 books)\n
-    Borrower1 (1 books)\n
-    Borrower2 (2 books)\n\n
-    --- End of Status Report ---\n"
+  # @ss "\n--- Status Report of Test Library ---\n\n
+  #   Test Library: 3 books; 3 borrowers.\n\n
+  #   Title3 by Author3; Checked out to Borrower3\n
+  #   Title1 by Author1; Checked out to Borrower1\n
+  #   Title2 by Author2; Available\n\n
+  #   Borrower3 (3 books)\n
+  #   Borrower1 (1 books)\n
+  #   Borrower2 (2 books)\n\n
+  #   --- End of Status Report ---\n"
 
   test "add a Borrower or Book correctly" do
     assert Library.add_item(@br3, @brs1) == @brs2
