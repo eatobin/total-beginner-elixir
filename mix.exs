@@ -29,7 +29,7 @@ defmodule TotalBeginnerElixir.Mixfile do
   # Type "mix help deps" for more examples and options
   defp deps do
     [
-      {:dogma, "~> 0.1", only: :dev}
+      {:credo, "~> 0.7", only: [:dev, :test]}
     ]
   end
 end
