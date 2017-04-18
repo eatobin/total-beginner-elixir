@@ -67,4 +67,11 @@ defmodule LibraryTest do
       [%Book{title: "Title2", author: "Author2", borrower: @br2}, @bk1]
   end
 
+  test "check in a Book correctly" do
+    assert Library.check_in("Title1", @bks1) ==
+      [%Book{title: "Title1", author: "Author1", borrower: nil}, @bk2]
+    assert Library.check_in("Title2", @bks1) == @bks1
+    assert Library.check_in("NoTitle", @bks1) == @bks1
+  end
+
 end

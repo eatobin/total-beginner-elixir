@@ -61,4 +61,15 @@ defmodule Library do
     end
   end
 
+  def check_in(t, bks) do
+    mbk = find_item(t, bks, &Book.get_title/1)
+    if(mbk != nil and book_out(mbk)) do
+      new_book = Book.set_borrower(nil, mbk)
+      fewer_books = remove_book(mbk, bks)
+      add_item(new_book, fewer_books)
+    else
+      bks
+    end
+  end
+
 end
