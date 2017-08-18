@@ -1,0 +1,7 @@
+iex(1)> Poison.encode!(%Borrower{name: "me",max_books: 77})
+"{\"name\":\"me\",\"max_books\":77}"
+iex(2)> Poison.decode("{\"name\":\"me\",\"max_books\":77}", as: %Borrower{})
+{:ok, %Borrower{max_books: 77, name: "me"}}
+iex(3)> Poison.decode!("{\"name\":\"me\",\"max_books\":77}", as: %Borrower{})
+%Borrower{max_books: 77, name: "me"}
+iex(4)>

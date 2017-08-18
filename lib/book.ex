@@ -1,8 +1,6 @@
 defmodule Book do
 
-  @moduledoc """
-  This is the Book module.
-  """
+  @derive [Poison.Encoder]
 
   defstruct [:title, :author, :borrower]
 

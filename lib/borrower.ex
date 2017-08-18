@@ -1,9 +1,7 @@
 defmodule Borrower do
 
-  @moduledoc """
-  This is the Borrower module.
-  """
-
+  @derive [Poison.Encoder]
+  
   defstruct [:name, :max_books]
 
   def make_borrower(n, mb) do
