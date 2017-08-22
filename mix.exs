@@ -27,7 +27,7 @@ defmodule TotalBeginnerElixir.Mixfile do
   #   {:my_dep, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"}
   #
   # Type "mix help deps" for more examples and options
-  def deps do
+  defp deps do
     [{:poison, "~> 3.1"}]
   end
 end
