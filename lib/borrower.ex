@@ -1,7 +1,7 @@
 defmodule Borrower do
 
   @derive [Poison.Encoder]
-  
+
   defstruct [:name, :max_books]
 
   def make_borrower(n, mb) do
