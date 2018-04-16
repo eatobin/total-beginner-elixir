@@ -1,5 +1,4 @@
 defmodule Borrower do
-
   @derive [Poison.Encoder]
 
   defstruct [:name, :max_books]
@@ -25,10 +24,6 @@ defmodule Borrower do
   end
 
   def borrower_to_string(br) do
-    get_name(br) <>
-      " (" <>
-      to_string(get_max_books(br)) <>
-      " books)"
+    get_name(br) <> " (" <> to_string(get_max_books(br)) <> " books)"
   end
-
 end

@@ -1,5 +1,4 @@
 defmodule Book do
-
   @derive [Poison.Encoder]
 
   defstruct [:title, :author, :borrower]
@@ -26,17 +25,14 @@ defmodule Book do
 
   def available_string(bk) do
     br = get_borrower(bk)
+
     case br do
       nil -> "Available"
-        _ -> "Checked out to " <>
-               Borrower.get_name(br)
+      _ -> "Checked out to " <> Borrower.get_name(br)
     end
   end
 
   def book_to_string(bk) do
-    get_title(bk) <>
-      " by " <> get_author(bk) <>
-      "; " <> available_string(bk)
+    get_title(bk) <> " by " <> get_author(bk) <> "; " <> available_string(bk)
   end
-
 end

@@ -1,5 +1,4 @@
 defmodule Library do
-
   @moduledoc """
   This is the Library module.
   """
@@ -23,7 +22,11 @@ defmodule Library do
   def find_item(tgt, coll, f) do
     # result = Enum.filter(coll, fn x -> f.(x) == tgt end)
     # result = Enum.filter(coll, &(f.(&1) == tgt))
-    result = for x <- coll, f.(x) == tgt do x end
+    result =
+      for x <- coll, f.(x) == tgt do
+        x
+      end
+
     List.first(result)
   end
 
@@ -51,8 +54,8 @@ defmodule Library do
   def check_out(n, t, brs, bks) do
     mbk = find_item(t, bks, &Book.get_title/1)
     mbr = find_item(n, brs, &Borrower.get_name/1)
-    if (mbk != nil and mbr != nil
-          and not_maxed_out(mbr, bks) and book_not_out(mbk)) do
+
+    if mbk != nil and mbr != nil and not_maxed_out(mbr, bks) and book_not_out(mbk) do
       new_book = Book.set_borrower(mbr, mbk)
       fewer_books = remove_book(mbk, bks)
       add_item(new_book, fewer_books)
@@ -63,6 +66,7 @@ defmodule Library do
 
   def check_in(t, bks) do
     mbk = find_item(t, bks, &Book.get_title/1)
+
     if(mbk != nil and book_out(mbk)) do
       new_book = Book.set_borrower(nil, mbk)
       fewer_books = remove_book(mbk, bks)
@@ -71,5 +75,4 @@ defmodule Library do
       bks
     end
   end
-
 end

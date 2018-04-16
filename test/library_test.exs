@@ -1,7 +1,6 @@
-ExUnit.start
+ExUnit.start()
 
 defmodule LibraryTest do
-
   use ExUnit.Case, async: true
 
   @br1 Borrower.make_borrower("Borrower1", 1)
@@ -14,8 +13,7 @@ defmodule LibraryTest do
   @bk1 Book.make_book("Title1", "Author1", @br1)
   @bk2 Book.make_book("Title2", "Author2", nil)
   @bk3 Book.make_book("Title3", "Author3", @br3)
-  @bk4 Book.make_book("Title4", "Author4",
-    %Borrower{max_books: 3, name: "Borrower3"})
+  @bk4 Book.make_book("Title4", "Author4", %Borrower{max_books: 3, name: "Borrower3"})
 
   @bks1 [@bk1, @bk2]
   @bks2 [@bk3, @bk1, @bk2]
@@ -63,15 +61,16 @@ defmodule LibraryTest do
     assert Library.check_out("Borrower2", "NoTitle", @brs1, @bks1) == @bks1
     assert Library.check_out("NoName", "Title1", @brs1, @bks1) == @bks1
     assert Library.check_out("Borrower1", "Title2", @brs1, @bks1) == @bks1
+
     assert Library.check_out("Borrower2", "Title2", @brs1, @bks1) ==
-      [%Book{title: "Title2", author: "Author2", borrower: @br2}, @bk1]
+             [%Book{title: "Title2", author: "Author2", borrower: @br2}, @bk1]
   end
 
   test "check in a Book correctly" do
     assert Library.check_in("Title1", @bks1) ==
-      [%Book{title: "Title1", author: "Author1", borrower: nil}, @bk2]
+             [%Book{title: "Title1", author: "Author1", borrower: nil}, @bk2]
+
     assert Library.check_in("Title2", @bks1) == @bks1
     assert Library.check_in("NoTitle", @bks1) == @bks1
   end
-
 end
