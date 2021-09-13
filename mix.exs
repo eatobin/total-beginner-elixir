@@ -5,7 +5,7 @@ defmodule TotalBeginnerElixir.Mixfile do
     [
       app: :total_beginner_elixir,
       version: "0.1.0",
-      elixir: "~> 1.6",
+      elixir: "~> 1.12",
       build_embedded: Mix.env() == :prod,
       start_permanent: Mix.env() == :prod,
       deps: deps()
@@ -30,6 +30,6 @@ defmodule TotalBeginnerElixir.Mixfile do
   #
   # Type "mix help deps" for more examples and options
   defp deps do
-    [{:poison, "~> 3.1"}]
+    [{:poison, "~> 5.0"}]
   end
 end
