@@ -1,5 +1,5 @@
 defmodule Book do
-  @derive [Poison.Encoder]
+  # @derive [Poison.Encoder]
 
   defstruct [:title, :author, :borrower]
 

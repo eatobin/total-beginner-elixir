@@ -1,5 +1,5 @@
 defmodule Borrower do
-  @derive [Poison.Encoder]
+  # @derive [Poison.Encoder]
 
   defstruct [:name, :max_books]
 
